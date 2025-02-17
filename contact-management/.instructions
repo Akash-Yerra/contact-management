@@ -1,0 +1,144 @@
+Project Name: Voice-Controlled Contact Manager
+
+Tech Stack: React Native (Expo), Supabase (for authentication & database), Voice Recognition APIs
+
+Project Overview
+Create a modern, user-friendly mobile app that allows users to manage contacts using voice commands. The app should support adding, editing, deleting, and retrieving contacts, along with authentication, a customizable UI, and a seamless experience.
+
+1. Features & Functionality
+1.1 Voice-Controlled Contact Management
+The app should respond to voice commands to add, edit, delete, and view contacts.
+If the user says "New Contact", a contact form should open.
+The app should read aloud field names one by one (e.g., "Name," "Contact Number," "Address") and capture the user's voice input.
+The user can edit any field by saying "Edit [field name]" before saving.
+The user can confirm by saying "Save" or cancel by saying "Cancel".
+1.2 Contact Form Fields (Based on Google Form)
+Each contact should have the following details:
+
+Name
+Contact Number
+Address/Location
+Occupation 1, 2, 3, 4
+Expected Wage
+Work Experience
+Daily Wage
+1.3 Contact List & Search
+All saved contacts should be displayed on the home screen in a colorful, user-friendly UI.
+Each contact card should have a unique color.
+A search bar at the top should allow users to search contacts by name or occupation.
+1.4 Editing Contacts
+Users can say "Edit [contact name]" to open the contact in edit mode.
+Changes should be confirmed via voice by saying "Save" or discarded with "Cancel".
+1.5 Account & Authentication (Using Supabase)
+User Authentication: Login/signup with email and password using Supabase.
+Profile Picture: Users should have a profile logo on the top-left of the home screen.
+Navigation: Clicking the profile logo should navigate to the account settings page, where users can view and edit their account details.
+Logout option should be available in the settings.
+1.6 Dark Mode & Customization
+Users should be able to switch between light and dark mode in settings.
+The UI should be modern and visually appealing, inspired by leading apps like Flipkart or Amazon.
+2. Database Schema (Supabase)
+Table: contacts
+
+Column Name	Type	Description
+id	UUID (Primary Key)	Unique Contact ID
+user_id	UUID (Foreign Key)	ID of the user who owns the contact
+name	TEXT	Contact Name
+contact_number	TEXT	Contact Number
+address	TEXT	Address/Location
+occupation1	TEXT	Occupation 1
+occupation2	TEXT	Occupation 2
+occupation3	TEXT	Occupation 3
+occupation4	TEXT	Occupation 4
+expected_wage	TEXT	Expected Wage
+work_experience	TEXT	Work Experience
+daily_wage	TEXT	Daily Wage
+created_at	TIMESTAMP	Timestamp of creation
+3. Steps for Implementation
+3.1 Setting Up the Project in Cursor AI
+Initialize the React Native App with Expo
+
+bash
+Copy
+Edit
+npx create-expo-app contact-manager
+cd contact-manager
+expo install expo-speech expo-av react-native-gesture-handler
+Integrate Supabase
+
+Set up a Supabase project.
+Retrieve the Supabase URL and API Key.
+Install Supabase SDK in your app:
+bash
+Copy
+Edit
+npm install @supabase/supabase-js
+Configure Supabase in supabase.js:
+javascript
+Copy
+Edit
+import { createClient } from '@supabase/supabase-js';
+
+const SUPABASE_URL = 'your-supabase-url';
+const SUPABASE_KEY = 'your-supabase-api-key';
+
+export const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
+3.2 Implement Voice Recognition & Commands
+Use the Expo Speech & AV APIs for voice processing.
+Implement a function to listen for commands and trigger actions.
+3.3 UI & Navigation
+Bottom Navigation Bar: Home & Settings.
+Home Page: List of contacts, search bar, and user profile logo (top-left).
+Settings Page: Account management, theme switcher, and logout.
+4. Testing & Deployment
+Run the app using:
+bash
+Copy
+Edit
+expo start
+Test on a physical device to check voice recognition.
+Deploy using Expo Go or package it for the Play Store.
+5. Manual Operations (Without Voice Commands)
+Users should also be able to manually add, edit, delete, and search contacts through UI interactions.
+Each contact card should have an edit button.
+The search bar should allow text input for finding contacts.
+6. Final Deliverables
+A fully functional React Native app with voice-controlled contact management.
+Supabase integration for authentication and contact storage.
+A beautiful, modern UI with dark mode and a profile logo.
+Smooth and intuitive voice command interactions.
+This prompt should provide Cursor AI with a clear roadmap to implement your project. Let me know if you need any adjustments! 🚀
+
+
+Here are some feature suggestions you can implement inthe Settings page of your Voice-Controlled Contact Management App:
+
+1. Account Management
+✅ View & Edit Account – Allow users to update their name, email, and profile picture.
+✅ Change Password – Provide an option to update the account password.
+✅ Delete Account – Allow users to permanently delete their account and all stored contacts.
+
+2. Theme & UI Customization
+✅ Dark Mode / Light Mode Toggle – Let users switch between themes.
+✅ Contact Card Appearance – Let users customize the colors or layout of contact cards.
+
+3. Voice Assistant Preferences
+✅ Enable/Disable Voice Commands – Give users control over voice command activation.
+✅ Change Voice Response Speed – Adjust how fast the app reads out responses.
+✅ Select Voice Type – Choose between male/female/robotic voices for assistant feedback.
+
+4. Security & Privacy
+✅ Biometric Authentication (Fingerprint/Face ID) – Enable login security.
+✅ Two-Factor Authentication (2FA) – Add an extra layer of security for login.
+✅ App Lock (PIN/Pattern) – Require a PIN before opening the app.
+✅ Data Encryption – Show users if their contact data is securely stored.
+
+5. Backup & Sync Options
+✅ Export Contacts to CSV – Allow users to download contacts as a spreadsheet.
+✅ Import Contacts from CSV – Let users upload a CSV file to add contacts in bulk.
+✅ Cloud Sync (Supabase Backup) – Option to manually sync or restore contacts.
+
+6. App Information & Support
+✅ Help & FAQs – Provide quick guides on how to use the app.
+✅ Report a Bug – Allow users to send feedback about app issues.
+✅ Contact Support – Provide an option to email or chat with support.
+✅ About the App – Show the app version and developer details.

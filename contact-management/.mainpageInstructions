@@ -1,0 +1,45 @@
+Title: Contact Management App - Main Home Page
+
+Description:
+Create the main landing page for the Voice-Controlled Contact Management App after a user logs in. The UI should be dark-themed with a modern, clean, and user-friendly design.
+
+Key Features & Layout:
+
+Top Navigation Bar:
+
+A user profile icon (logo) on the top-left corner. Clicking it should navigate to the account settings page.
+The app title "Contacts" should be centrally aligned.
+The top bar should have a dark blue background for contrast.
+Search Bar:
+
+A search input field to allow users to quickly search for contacts.
+The placeholder text should say: "Search contacts..."
+The search bar should be rounded and visually prominent.
+Contacts List (Cards UI):
+
+Each contact should be displayed in a rounded rectangular card.
+Card Background: Blue with a slight gradient.
+Each card should show:
+Name (in bold white text).
+Phone number with a 📞 (call) icon.
+Location with a 📍pin icon.
+Tags (badges) for categorizing the contact (e.g., "Student").
+Daily Wage with a 💰 (money) icon.
+Each card should have three action buttons:
+Eye Icon (👁️) → View contact details.
+Edit Icon (✏️) → Edit contact information.
+Delete Icon (🗑️) → Remove contact.
+Floating Action Button (FAB):
+
+A circular '+' button (floating at the bottom right) to add a new contact.
+Bottom Navigation Bar:
+
+Two primary navigation buttons:
+Contacts (📖) → Active by default.
+Settings (⚙️) → Takes the user to the settings page.
+The navigation bar should have a dark blue background with white icons and text.
+Additional Functionalities
+Implement smooth animations for navigation and button clicks.
+Ensure the UI is fully responsive for both mobile and tablet.
+Apply consistent padding, spacing, and rounded edges for a modern look.
+Support voice commands for searching and managing contacts
